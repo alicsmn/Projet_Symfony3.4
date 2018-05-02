@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <h1>Les Annonces</h1>
+
+        {% for Annonce in Annonce %}
+<div class="annonceslist">
+            <p>{{ Annonce.created | date }}</p>
+            <p> {{ Annonce.title }}</p>
+            <p>{{ Annonce.content }}</p>
+            <img class="images" src="{{ asset('uploads/' ~ Annonce.photo) }}">
+            <p>{{ Annonce.price }}</p>
+
+
+            {% if Annonce.user_id == app.user.id %}
+                <p>
+                    <button class="color btn btn-primary"><a class="color" href="{{ path('annonce_edit', {'id':Annonce.id }) }}">Modifier</a></button>
+                    <button class="color btn btn-danger"><a class="color" href="{{ path('annonce_delete', {'id':Annonce.id }) }}">Supprimer</a></button></p>
+            {% endif %}
+</div>
+            {% endfor %}
+
+    <div class="text-center">{{ knp_pagination_render(Annonce) }}</div>
+{% endblock%}

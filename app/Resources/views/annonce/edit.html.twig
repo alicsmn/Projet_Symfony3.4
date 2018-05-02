@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <h1>Modifiez votre Billet</h1>
+
+    <div class="modif">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button type="submit" class="btn btn-primary">Save</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock%}

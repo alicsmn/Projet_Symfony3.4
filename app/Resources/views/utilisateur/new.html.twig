@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Inscription</h1>
+
+<div class="inscription">
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+
+        <input type="submit" class="btn btn-primary" value="Créez votre compte" />
+    {{ form_end(form) }}
+</div>
+{% endblock %}

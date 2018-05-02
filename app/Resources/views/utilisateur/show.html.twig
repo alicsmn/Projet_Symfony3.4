@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="deleteprofil">
+        {{ form_start(delete_form) }}
+        <input class="btn btn-danger" type="submit" value="Delete" >
+        {{ form_end(delete_form) }}
+        <button class="color btn btn-primary"><a class="color" href="{{ path('_edit', {'id':app.user.id }) }}">Editer mon profil</a></button>
+
+    </div>
+    <h1>Bonjour {{ app.user.username }}</h1>
+<div class="profil">
+
+                <p>Prénom : {{ app.user.name }}</p>
+                <p>Nom : {{ app.user.lastname }}</p>
+                <p>Date d'anniversaire : {% if app.user.birthdate %}{{ app.user.birthdate|date('Y-m-d') }}{% endif %}</p>
+                <p>Email : {{ app.user.email }}</p>
+
+</div>
+{% endblock %}

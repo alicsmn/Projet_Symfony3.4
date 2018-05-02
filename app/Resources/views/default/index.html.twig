@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Accueil</h1>
+    <div class="index">
+        <button type="submit" class="indextn btn btn-primary"><a class="color" href="{{ path('security_login') }}">Connexion</a></button>
+        <button type="submit" class="indextn btn btn-primary"><a class="color" href="{{ path('_new') }}">Inscription</a></button>
+    </div>
+{% endblock %}
